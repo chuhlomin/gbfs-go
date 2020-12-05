@@ -10,9 +10,9 @@ import (
 func main() {
 	c := gbfs.NewClient("github.com/chuhlomin/gbfs-go", 30*time.Second)
 
-	log.Printf("Loading systems from: %#v", gbfs.NABSA)
+	log.Printf("Loading systems from: %#v", gbfs.SystemsNABSA)
 
-	systems, err := c.LoadSystems(gbfs.NABSA)
+	systems, err := c.LoadSystems(gbfs.SystemsNABSA)
 	if err != nil {
 		log.Fatalf("ERROR: Failed to %v", err)
 	}

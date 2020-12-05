@@ -10,7 +10,7 @@ import (
 // North American Bike Share Association
 // URL to systems.csv
 // See https://github.com/NABSA/gbfs#systems-implementing-gbfs
-const NABSA = "https://github.com/NABSA/gbfs/raw/master/systems.csv"
+const SystemsNABSA = "https://github.com/NABSA/gbfs/raw/master/systems.csv"
 
 // System represents system publishing GBFS feeds
 type System struct {
