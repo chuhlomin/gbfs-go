@@ -11,7 +11,7 @@ func main() {
 	c := gbfs.NewClient("github.com/chuhlomin/gbfs-go", 30*time.Second)
 
 	// See c.LoadSystem to discover GBFS URL for station_status
-	url := "https://gbfs.citibikenyc.com/gbfs/en/system_hours.json"
+	url := "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_bi/en/system_hours.json"
 
 	log.Printf("Loading station hours from URL %s", url)
 

@@ -1,9 +1,10 @@
 package gbfs
 
+// https://github.com/NABSA/gbfs/blob/master/gbfs.md#system_hoursjson
+
 import (
 	"encoding/json"
 	"io/ioutil"
-	"time"
 
 	"github.com/pkg/errors"
 )
@@ -18,10 +19,10 @@ type SystemHoursData struct {
 }
 
 type RentalHours struct {
-	UserTypes []UserType     `json:"user_types"`
-	Days      []time.Weekday `json:"days"`
-	StartTime Clock          `json:"start_time"`
-	EndTime   Clock          `json:"end_time"`
+	UserTypes []UserType `json:"user_types"`
+	Days      []Weekday  `json:"days"`
+	StartTime Clock      `json:"start_time"`
+	EndTime   Clock      `json:"end_time"`
 }
 
 type UserType string

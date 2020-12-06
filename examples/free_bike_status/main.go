@@ -11,7 +11,7 @@ func main() {
 	c := gbfs.NewClient("github.com/chuhlomin/gbfs-go", 30*time.Second)
 
 	// See c.LoadSystem to discover GBFS URL for free_bike_status
-	url := "http://gbfs.basis-pdn.bike/Watford/free_bike_status.json"
+	url := "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_lv/lv/free_bike_status.json"
 
 	log.Printf("Loading station status from URL %s", url)
 
