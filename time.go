@@ -19,10 +19,10 @@ func (clock *Clock) UnmarshalJSON(input []byte) error {
 	return nil
 }
 
-func (t Clock) MarshalJSON() ([]byte, error) {
-	return []byte(t.String()), nil
+func (clock Clock) MarshalJSON() ([]byte, error) {
+	return []byte(clock.String()), nil
 }
 
-func (t *Clock) String() string {
-	return "\"" + time.Time(*t).Format(clockFormat) + "\""
+func (clock *Clock) String() string {
+	return "\"" + time.Time(*clock).Format(clockFormat) + "\""
 }

@@ -10,16 +10,18 @@ gbfs-go is a [Go][] library that aimed to simplify reading and writing GBFS data
 
 ## Examples
 
-* [systems][]
-* [gbfs][]
-* [system_information][]
-* [station_information][]
-* [station_status][]
-* [free_bike_status][]
-* [system_hours][]
-* [system_regions][]
-* [system_pricing_plans][]
-* [system_alerts][]
+* [systems](https://github.com/chuhlomin/gbfs-go/blob/main/examples/systems/main.go)
+* [gbfs](https://github.com/chuhlomin/gbfs-go/blob/main/examples/gbfs/main.go)
+* [gbfs_version](https://github.com/chuhlomin/gbfs-go/blob/main/examples/gbfs_version/main.go)
+* [system_information](https://github.com/chuhlomin/gbfs-go/blob/main/examples/system_information/main.go)
+* [vehicle_types](https://github.com/chuhlomin/gbfs-go/blob/main/examples/vehicle_types/main.go)
+* [station_information](https://github.com/chuhlomin/gbfs-go/blob/main/examples/station_information/main.go)
+* [station_status](https://github.com/chuhlomin/gbfs-go/blob/main/examples/station_status/main.go)
+* [free_bike_status](https://github.com/chuhlomin/gbfs-go/blob/main/examples/free_bike_status/main.go)
+* [system_hours](https://github.com/chuhlomin/gbfs-go/blob/main/examples/system_hours/main.go)
+* [system_regions](https://github.com/chuhlomin/gbfs-go/blob/main/examples/system_regions/main.go)
+* [system_pricing_plans](https://github.com/chuhlomin/gbfs-go/blob/main/examples/system_pricing_plans/main.go)
+* [system_alerts](https://github.com/chuhlomin/gbfs-go/blob/main/examples/system_alerts/main.go)
 
 Try examples:
 
@@ -37,14 +39,3 @@ Keep in mind that data feeds may have a [different license] (like CC0-1.0, CC-BY
 [Go]: https://golang.org
 [different license]: https://github.com/NABSA/gbfs/blob/master/data-licenses.md
 [MIT License]: https://github.com/chuhlomin/gbfs-go/blob/main/LICENSE
-
-[systems]: https://github.com/chuhlomin/gbfs-go/blob/main/examples/systems/main.go
-[gbfs]: https://github.com/chuhlomin/gbfs-go/blob/main/examples/gbfs/main.go
-[system_information]: https://github.com/chuhlomin/gbfs-go/blob/main/examples/system_information/main.go
-[station_information]: https://github.com/chuhlomin/gbfs-go/blob/main/examples/station_information/main.go
-[station_status]: https://github.com/chuhlomin/gbfs-go/blob/main/examples/station_status/main.go
-[free_bike_status]: https://github.com/chuhlomin/gbfs-go/blob/main/examples/free_bike_status/main.go
-[system_hours]: https://github.com/chuhlomin/gbfs-go/blob/main/examples/system_hours/main.go
-[system_regions]: https://github.com/chuhlomin/gbfs-go/blob/main/examples/system_regions/main.go
-[system_pricing_plans]: https://github.com/chuhlomin/gbfs-go/blob/main/examples/system_pricing_plans/main.go
-[system_alerts]: https://github.com/chuhlomin/gbfs-go/blob/main/examples/system_alerts/main.go
