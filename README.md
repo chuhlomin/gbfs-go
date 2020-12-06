@@ -18,6 +18,8 @@ gbfs-go is a [Go][] library that aimed to simplify reading and writing GBFS data
 * [free_bike_status][]
 * [system_hours][]
 * [system_regions][]
+* [system_pricing_plans][]
+* [system_alerts][]
 
 Try examples:
 
@@ -44,3 +46,5 @@ Keep in mind that data feeds may have a [different license] (like CC0-1.0, CC-BY
 [free_bike_status]: https://github.com/chuhlomin/gbfs-go/blob/main/examples/free_bike_status/main.go
 [system_hours]: https://github.com/chuhlomin/gbfs-go/blob/main/examples/system_hours/main.go
 [system_regions]: https://github.com/chuhlomin/gbfs-go/blob/main/examples/system_regions/main.go
+[system_pricing_plans]: https://github.com/chuhlomin/gbfs-go/blob/main/examples/system_pricing_plans/main.go
+[system_alerts]: https://github.com/chuhlomin/gbfs-go/blob/main/examples/system_alerts/main.go
