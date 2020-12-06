@@ -1,6 +1,6 @@
 package gbfs
 
-// https://github.com/NABSA/gbfs/blob/master/gbfs.md#system_hoursjson
+// https://github.com/NABSA/gbfs/blob/master/gbfs.md#system_calendarjson
 
 import (
 	"encoding/json"

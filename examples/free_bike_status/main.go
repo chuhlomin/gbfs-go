@@ -13,7 +13,7 @@ func main() {
 	// See c.LoadSystem to discover GBFS URL for free_bike_status
 	url := "https://gbfs.nextbike.net/maps/gbfs/v1/nextbike_lv/lv/free_bike_status.json"
 
-	log.Printf("Loading station status from URL %s", url)
+	log.Printf("Loading free bike status from URL %s", url)
 
 	resp, err := c.LoadFreeBikeStatus(url)
 	if err != nil {

@@ -10,7 +10,7 @@ import (
 func main() {
 	c := gbfs.NewClient("github.com/chuhlomin/gbfs-go", 30*time.Second)
 
-	// See c.LoadSystem to discover GBFS URL for station_status
+	// See c.LoadSystem to discover GBFS URL for system_calendar
 	url := "https://gbfs.citibikenyc.com/gbfs/en/system_calendar.json"
 
 	log.Printf("Loading system calendar from URL %s", url)

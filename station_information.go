@@ -1,5 +1,7 @@
 package gbfs
 
+// https://github.com/NABSA/gbfs/blob/master/gbfs.md#system_informationjson
+
 import (
 	"encoding/json"
 	"io/ioutil"
