@@ -1,5 +1,7 @@
 package gbfs
 
+// https://github.com/NABSA/gbfs/blob/master/gbfs.md#gbfsjson
+
 import (
 	"encoding/json"
 	"io/ioutil"
@@ -7,9 +9,9 @@ import (
 	"github.com/pkg/errors"
 )
 
-// GBFS represent a single system or geographic area
+// GBFSResponse represent a single system or geographic area
 // in which vehicles are operated.
-type GBFS struct {
+type GBFSResponse struct {
 	Header
 	Data LanguageFeeds `json:"data"`
 }
@@ -34,23 +36,59 @@ type Feed struct {
 	URL  string `json:"url"`
 }
 
-func (c *Client) LoadGBFS(url string) (*GBFS, error) {
+func (lf *LanguageFeeds) UnmarshalJSON(data []byte) error {
+	var v map[string]json.RawMessage
+	if err := json.Unmarshal(data, &v); err != nil {
+		return err
+	}
+
+	if message, ok := v["feeds"]; ok {
+		// Some systems don't follow specification directly
+		// and exposing "feeds" right inside "data", omitting "LanguageFeeds" map
+		var feeds []Feed
+		if err := json.Unmarshal(message, &feeds); err != nil {
+			return err
+		}
+
+		*(*LanguageFeeds)(lf) = map[string]DataFeeds{
+			"default": {
+				Feeds: feeds,
+			},
+		}
+		return nil
+	}
+
+	result := LanguageFeeds{}
+
+	for language, message := range v {
+		var df DataFeeds
+		if err := json.Unmarshal(message, &df); err != nil {
+			return err
+		}
+		result[language] = df
+	}
+
+	*lf = result
+	return nil
+}
+
+func (c *Client) LoadGBFS(url string) (*GBFSResponse, error) {
 	resp, err := c.sendRequest(url)
 	if err != nil {
 		return nil, errors.Wrap(err, "send request")
 	}
 	defer resp.Body.Close()
 
-	var gbfs GBFS
+	var r GBFSResponse
 
 	b, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
 		return nil, errors.Wrap(err, "read response body")
 	}
 
-	if err := json.Unmarshal(b, &gbfs); err != nil {
+	if err := json.Unmarshal(b, &r); err != nil {
 		return nil, errors.Wrap(err, "unmarshal JSON")
 	}
 
-	return &gbfs, nil
+	return &r, nil
 }
