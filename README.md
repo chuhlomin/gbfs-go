@@ -19,6 +19,7 @@ gbfs-go is a [Go][] library that aimed to simplify reading and writing GBFS data
 * [station_status](https://github.com/chuhlomin/gbfs-go/blob/main/examples/station_status/main.go)
 * [free_bike_status](https://github.com/chuhlomin/gbfs-go/blob/main/examples/free_bike_status/main.go)
 * [system_hours](https://github.com/chuhlomin/gbfs-go/blob/main/examples/system_hours/main.go)
+* [system_calendar](https://github.com/chuhlomin/gbfs-go/blob/main/examples/system_calendar/main.go)
 * [system_regions](https://github.com/chuhlomin/gbfs-go/blob/main/examples/system_regions/main.go)
 * [system_pricing_plans](https://github.com/chuhlomin/gbfs-go/blob/main/examples/system_pricing_plans/main.go)
 * [system_alerts](https://github.com/chuhlomin/gbfs-go/blob/main/examples/system_alerts/main.go)
