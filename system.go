@@ -14,12 +14,12 @@ const SystemsNABSA = "https://github.com/NABSA/gbfs/raw/master/systems.csv"
 
 // System represents system publishing GBFS feeds
 type System struct {
-	CountryCode      string
-	Name             string
-	Location         string
-	SystemID         string
-	URL              string
-	AutoDiscoveryURL string
+	ID               string `json:"id"`
+	CountryCode      string `json:"country_code"`
+	Name             string `json:"name"`
+	Location         string `json:"location"`
+	URL              string `json:"url"`
+	AutoDiscoveryURL string `json:"auto_discovery_url"`
 }
 
 // LoadSystem gets URL to systems.csv file and returns parsed systems
@@ -56,7 +56,7 @@ func (c *Client) LoadSystems(url string) ([]System, error) {
 				case "Location":
 					system.Location = record[i]
 				case "System ID":
-					system.SystemID = record[i]
+					system.ID = record[i]
 				case "URL":
 					system.URL = record[i]
 				case "Auto-Discovery URL":
