@@ -4,6 +4,7 @@ package gbfs
 
 import (
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 
 	"github.com/pkg/errors"
@@ -31,9 +32,28 @@ type DataFeeds struct {
 	Feeds []Feed `json:"feeds"`
 }
 
+func (df *DataFeeds) GetFeed(name string) (*Feed, error) {
+	for _, f := range df.Feeds {
+		if f.Name == name {
+			return &f, nil
+		}
+	}
+	return nil, fmt.Errorf("no language feeds found")
+}
+
 type Feed struct {
 	Name string `json:"name"`
 	URL  string `json:"url"`
+}
+
+func (lf LanguageFeeds) GetDataFeeds(language string) (*DataFeeds, error) {
+	if f, found := lf[language]; found {
+		return &f, nil
+	}
+	for _, f := range lf {
+		return &f, nil
+	}
+	return nil, fmt.Errorf("no language feeds found")
 }
 
 func (lf *LanguageFeeds) UnmarshalJSON(data []byte) error {
