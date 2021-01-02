@@ -19,7 +19,7 @@ type SystemPricingPlans struct {
 }
 
 type Plan struct {
-	ID            string    `json:"plan_id"`
+	ID            ID        `json:"plan_id"`
 	URL           string    `json:"url,omitempty"`
 	Name          string    `json:"name"`
 	Currency      string    `json:"currency"`

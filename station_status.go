@@ -19,7 +19,7 @@ type StationStatusData struct {
 }
 
 type StationStatus struct {
-	ID                    string                `json:"station_id"`
+	ID                    ID                    `json:"station_id"`
 	NumBikesAvailable     uint                  `json:"num_bikes_available"`
 	NumBikesDisabled      uint                  `json:"num_bikes_disabled,omitempty"`
 	NumDocksAvailable     uint                  `json:"num_docks_available,omitempty"`
@@ -32,8 +32,8 @@ type StationStatus struct {
 }
 
 type VehicleAvailability struct {
-	VehicleTypeID string `json:"vehicle_type_id"`
-	Count         uint   `json:"count"`
+	VehicleTypeID ID   `json:"vehicle_type_id"`
+	Count         uint `json:"count"`
 }
 
 func (c *Client) LoadStationStatus(url string) (*StationStatusResponse, error) {

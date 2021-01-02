@@ -20,7 +20,7 @@ type VehicleTypesData struct {
 }
 
 type VehicleType struct {
-	VehicleTypeID  string         `json:"vehicle_type_id"`
+	VehicleTypeID  ID             `json:"vehicle_type_id"`
 	FormFactor     FormFactor     `json:"form_factor"`
 	PropulsionType PropulsionType `json:"propulsion_type"`
 	MaxRangeMeters float64        `json:"max_range_meters,omitempty"`

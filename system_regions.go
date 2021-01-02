@@ -19,7 +19,7 @@ type SystemRegions struct {
 }
 
 type Region struct {
-	ID   string `json:"region_id"`
+	ID   ID     `json:"region_id"`
 	Name string `json:"name"`
 }
 

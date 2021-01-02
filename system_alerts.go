@@ -19,7 +19,7 @@ type SystemAlertsData struct {
 }
 
 type Alert struct {
-	ID          string      `json:"alert_id"`
+	ID          ID          `json:"alert_id"`
 	Type        AlertType   `json:"type"`
 	Times       []AlertTime `json:"times,omitempty"`
 	StationIDs  []string    `json:"station_ids,omitempty"`

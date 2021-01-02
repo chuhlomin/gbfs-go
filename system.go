@@ -14,12 +14,12 @@ const SystemsNABSA = "https://github.com/NABSA/gbfs/raw/master/systems.csv"
 
 // System represents system publishing GBFS feeds
 type System struct {
-	ID               string `json:"id"`
-	CountryCode      string `json:"country_code"`
-	Name             string `json:"name"`
-	Location         string `json:"location"`
-	URL              string `json:"url"`
-	AutoDiscoveryURL string `json:"auto_discovery_url"`
+	ID               string `json:"id" db:"id"`
+	CountryCode      string `json:"country_code" db:"country_code"`
+	Name             string `json:"name" db:"name"`
+	Location         string `json:"location" db:"location"`
+	URL              string `json:"url" db:"url"`
+	AutoDiscoveryURL string `json:"auto_discovery_url" db:"auto_discovery_url"`
 }
 
 // LoadSystem gets URL to systems.csv file and returns parsed systems

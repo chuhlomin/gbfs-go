@@ -19,14 +19,14 @@ type StationInformationData struct {
 }
 
 type StationInformation struct {
-	ID                  string         `json:"station_id"`
+	ID                  ID             `json:"station_id"`
 	Name                string         `json:"name"`
 	ShortName           string         `json:"short_name,omitempty"`
 	Lat                 float64        `json:"lat"`
 	Lon                 float64        `json:"lon"`
 	Address             string         `json:"address,omitempty"`
 	CrossStreet         string         `json:"cross_street,omitempty"`
-	RegionID            string         `json:"region_id,omitempty"`
+	RegionID            ID             `json:"region_id,omitempty"`
 	PostCode            string         `json:"post_code,omitempty"`
 	RentalMethods       []RentalMethod `json:"rental_methods,omitempty"`
 	IsVirtualStation    *bool          `json:"is_virtual_station,omitempty"` // added in v2.1-RC
