@@ -17,10 +17,12 @@ func (id *ID) UnmarshalJSON(data []byte) (err error) {
 	switch v := i.(type) {
 	case int:
 		*(*string)(id) = strconv.Itoa(v)
+	case float64:
+		*(*string)(id) = fmt.Sprintf("%1.0f", v)
 	case string:
 		*(*string)(id) = v
 	default:
-		return fmt.Errorf("parse %T", v)
+		return fmt.Errorf("parse ID %T", v)
 	}
 	return nil
 }
