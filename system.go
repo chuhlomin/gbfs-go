@@ -30,9 +30,13 @@ func (c *Client) LoadSystems(url string) ([]System, error) {
 	}
 	defer resp.Body.Close()
 
+	return ParseSystemsCSV(resp.Body)
+}
+
+func ParseSystemsCSV(reader io.Reader) ([]System, error) {
 	var systems []System
 
-	r := csv.NewReader(resp.Body)
+	r := csv.NewReader(reader)
 	var header []string
 	for {
 		record, err := r.Read()
